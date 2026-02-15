@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lean Canvas Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-light">
+
+  <header class="app-header no-print">
+    <div class="header-left">
+      <h1 class="app-title">Lean Canvas</h1>
+      <span class="save-status" id="saveStatus">Saved</span>
+    </div>
+    <div class="header-right">
+      <div class="theme-selector">
+        <label for="themeSelect">Theme:</label>
+        <select id="themeSelect">
+          <option value="theme-light">Light</option>
+          <option value="theme-dark">Dark</option>
+          <option value="theme-blueprint">Blueprint</option>
+          <option value="theme-warm">Warm</option>
+        </select>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn btn--secondary" id="btnExport" title="Export canvas as JSON">Export</button>
+        <button type="button" class="btn btn--secondary" id="btnImport" title="Import canvas from JSON">Import</button>
+        <input type="file" id="fileImport" accept=".json" hidden>
+        <button type="button" class="btn btn--danger" id="btnClear" title="Clear all canvas data">Clear</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== EDIT MODE ==================== -->
+    <div id="editMode" class="edit-mode">
+      <div class="canvas-title-wrapper">
+        <label for="canvasTitle" class="canvas-title-label">Canvas Title</label>
+        <input type="text" id="canvasTitle" class="canvas-title-input" placeholder="My Business Idea" data-field="title">
+      </div>
+
+      <div class="section-cards">
+
+        <!-- Step 1: Customer Segments -->
+        <div class="section-card" data-section="customerSegments">
+          <div class="section-header">
+            <span class="step-number">1</span>
+            <h2 class="section-title">Customer Segments</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Customer Segments" data-help-toggle="customerSegments">?</button>
+          </div>
+          <div class="help-panel" id="help-customerSegments" hidden></div>
+          <div class="section-fields">
+            <label for="field-customerSegments">Who are your target customers?</label>
+            <textarea id="field-customerSegments" data-field="customerSegments.content" placeholder="List your target customer segments..." rows="3"></textarea>
+            <label for="field-customerSegments-earlyAdopters" class="sub-label">Early Adopters</label>
+            <textarea id="field-customerSegments-earlyAdopters" data-field="customerSegments.earlyAdopters" placeholder="Who are your ideal first customers?" rows="2"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 2: Problem -->
+        <div class="section-card" data-section="problem">
+          <div class="section-header">
+            <span class="step-number">2</span>
+            <h2 class="section-title">Problem</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Problem" data-help-toggle="problem">?</button>
+          </div>
+          <div class="help-panel" id="help-problem" hidden></div>
+          <div class="section-fields">
+            <label for="field-problem">Top 1-3 problems your customers face</label>
+            <textarea id="field-problem" data-field="problem.content" placeholder="1. &#10;2. &#10;3. " rows="3"></textarea>
+            <label for="field-problem-existingAlternatives" class="sub-label">Existing Alternatives</label>
+            <textarea id="field-problem-existingAlternatives" data-field="problem.existingAlternatives" placeholder="How do customers solve these problems today?" rows="2"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 3: Unique Value Proposition -->
+        <div class="section-card" data-section="uvp">
+          <div class="section-header">
+            <span class="step-number">3</span>
+            <h2 class="section-title">Unique Value Proposition</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Unique Value Proposition" data-help-toggle="uvp">?</button>
+          </div>
+          <div class="help-panel" id="help-uvp" hidden></div>
+          <div class="section-fields">
+            <label for="field-uvp">Single, clear, compelling message that turns a visitor into a customer</label>
+            <textarea id="field-uvp" data-field="uvp.content" placeholder="Why are you different and worth paying attention to?" rows="3"></textarea>
+            <label for="field-uvp-highLevelConcept" class="sub-label">High-Level Concept</label>
+            <textarea id="field-uvp-highLevelConcept" data-field="uvp.highLevelConcept" placeholder='e.g., "YouTube = Flickr for video"' rows="1"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 4: Solution -->
+        <div class="section-card" data-section="solution">
+          <div class="section-header">
+            <span class="step-number">4</span>
+            <h2 class="section-title">Solution</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Solution" data-help-toggle="solution">?</button>
+          </div>
+          <div class="help-panel" id="help-solution" hidden></div>
+          <div class="section-fields">
+            <label for="field-solution">Top 3 features that address your top problems</label>
+            <textarea id="field-solution" data-field="solution.content" placeholder="1. &#10;2. &#10;3. " rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 5: Channels -->
+        <div class="section-card" data-section="channels">
+          <div class="section-header">
+            <span class="step-number">5</span>
+            <h2 class="section-title">Channels</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Channels" data-help-toggle="channels">?</button>
+          </div>
+          <div class="help-panel" id="help-channels" hidden></div>
+          <div class="section-fields">
+            <label for="field-channels">How will you reach your customers?</label>
+            <textarea id="field-channels" data-field="channels.content" placeholder="List your free and paid channels..." rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 6: Revenue Streams -->
+        <div class="section-card" data-section="revenueStreams">
+          <div class="section-header">
+            <span class="step-number">6</span>
+            <h2 class="section-title">Revenue Streams</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Revenue Streams" data-help-toggle="revenueStreams">?</button>
+          </div>
+          <div class="help-panel" id="help-revenueStreams" hidden></div>
+          <div class="section-fields">
+            <label for="field-revenueStreams">How will you make money?</label>
+            <textarea id="field-revenueStreams" data-field="revenueStreams.content" placeholder="Pricing model, revenue sources..." rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 7: Cost Structure -->
+        <div class="section-card" data-section="costStructure">
+          <div class="section-header">
+            <span class="step-number">7</span>
+            <h2 class="section-title">Cost Structure</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Cost Structure" data-help-toggle="costStructure">?</button>
+          </div>
+          <div class="help-panel" id="help-costStructure" hidden></div>
+          <div class="section-fields">
+            <label for="field-costStructure">What are your costs?</label>
+            <textarea id="field-costStructure" data-field="costStructure.content" placeholder="Fixed costs, variable costs..." rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 8: Key Metrics -->
+        <div class="section-card" data-section="keyMetrics">
+          <div class="section-header">
+            <span class="step-number">8</span>
+            <h2 class="section-title">Key Metrics</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Key Metrics" data-help-toggle="keyMetrics">?</button>
+          </div>
+          <div class="help-panel" id="help-keyMetrics" hidden></div>
+          <div class="section-fields">
+            <label for="field-keyMetrics">Key numbers that tell you how your business is doing</label>
+            <textarea id="field-keyMetrics" data-field="keyMetrics.content" placeholder="3-5 key activities you measure..." rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 9: Unfair Advantage -->
+        <div class="section-card" data-section="unfairAdvantage">
+          <div class="section-header">
+            <span class="step-number">9</span>
+            <h2 class="section-title">Unfair Advantage</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Unfair Advantage" data-help-toggle="unfairAdvantage">?</button>
+          </div>
+          <div class="help-panel" id="help-unfairAdvantage" hidden></div>
+          <div class="section-fields">
+            <label for="field-unfairAdvantage">Something that cannot be easily copied or bought</label>
+            <textarea id="field-unfairAdvantage" data-field="unfairAdvantage.content" placeholder="What gives you a defensible advantage?" rows="3"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="editor-actions">
+        <button type="button" class="btn btn--primary btn--large" id="btnGenerate">Generate Canvas</button>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW MODE ==================== -->
+    <div id="viewMode" class="view-mode" hidden>
+      <div class="view-actions no-print">
+        <button type="button" class="btn btn--secondary" id="btnBackToEditor">Back to Editor</button>
+        <button type="button" class="btn btn--primary" id="btnPrint">Print</button>
+      </div>
+
+      <div class="canvas-container" id="canvasContainer">
+        <h2 class="canvas-view-title" id="canvasViewTitle">Lean Canvas</h2>
+
+        <div class="canvas-grid">
+          <!-- Row 1 -->
+          <div class="canvas-cell cell-problem">
+            <h3 class="cell-title">Problem</h3>
+            <div class="cell-content" id="view-problem"></div>
+            <div class="cell-sub">
+              <h4 class="cell-sub-title">Existing Alternatives</h4>
+              <div class="cell-sub-content" id="view-problem-existingAlternatives"></div>
+            </div>
+          </div>
+
+          <div class="canvas-cell cell-solution">
+            <h3 class="cell-title">Solution</h3>
+            <div class="cell-content" id="view-solution"></div>
+          </div>
+
+          <div class="canvas-cell cell-uvp">
+            <h3 class="cell-title">Unique Value Proposition</h3>
+            <div class="cell-content" id="view-uvp"></div>
+            <div class="cell-sub">
+              <h4 class="cell-sub-title">High-Level Concept</h4>
+              <div class="cell-sub-content" id="view-uvp-highLevelConcept"></div>
+            </div>
+          </div>
+
+          <div class="canvas-cell cell-advantage">
+            <h3 class="cell-title">Unfair Advantage</h3>
+            <div class="cell-content" id="view-unfairAdvantage"></div>
+          </div>
+
+          <div class="canvas-cell cell-customer">
+            <h3 class="cell-title">Customer Segments</h3>
+            <div class="cell-content" id="view-customerSegments"></div>
+            <div class="cell-sub">
+              <h4 class="cell-sub-title">Early Adopters</h4>
+              <div class="cell-sub-content" id="view-customerSegments-earlyAdopters"></div>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="canvas-cell cell-metrics">
+            <h3 class="cell-title">Key Metrics</h3>
+            <div class="cell-content" id="view-keyMetrics"></div>
+          </div>
+
+          <div class="canvas-cell cell-channels">
+            <h3 class="cell-title">Channels</h3>
+            <div class="cell-content" id="view-channels"></div>
+          </div>
+
+          <div class="canvas-cell cell-cost-revenue">
+            <div class="cell-split">
+              <div class="cell-split-top">
+                <h3 class="cell-title">Cost Structure</h3>
+                <div class="cell-content" id="view-costStructure"></div>
+              </div>
+              <div class="cell-split-bottom">
+                <h3 class="cell-title">Revenue Streams</h3>
+                <div class="cell-content" id="view-revenueStreams"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="canvas-footer">
+          <span id="canvasDate"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer no-print">
+    <p>Based on <a href="https://www.leanfoundry.com/tools/lean-canvas" target="_blank" rel="noopener">Lean Canvas</a> by Ash Maurya. Open source, zero dependencies, works offline.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
