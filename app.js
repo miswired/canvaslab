@@ -51,7 +51,7 @@ const HELP_CONTENT = {
   },
 
   earlyAdopters: {
-    what: 'Early adopters are the specific people most likely to try your product first. They have the problem most urgently, are actively seeking a solution, and are willing to use an imperfect early product. They are NOT your mainstream market.',
+    what: 'Your ideal customer — also called your early adopter — is the specific person most likely to try your product first. They have the problem most urgently, are actively seeking a solution, and are willing to use an imperfect early product. They are NOT your mainstream market.',
     how: `<ul>
       <li>Be specific: describe a real person, not a demographic</li>
       <li>They should have the problem acutely — it's a "hair on fire" problem for them</li>
@@ -268,7 +268,7 @@ const HELP_CONTENT = {
 const SECTIONS = [
   { key: 'problem', title: 'Problem' },
   { key: 'existingAlternatives', title: 'Existing Alternatives' },
-  { key: 'earlyAdopters', title: 'Early Adopters' },
+  { key: 'earlyAdopters', title: 'Ideal Customer' },
   { key: 'customerSegments', title: 'Customer Segments' },
   { key: 'solution', title: 'Solution' },
   { key: 'uvp', title: 'Unique Value Proposition' },
