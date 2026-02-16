@@ -42,26 +42,10 @@
 
       <div class="section-cards">
 
-        <!-- Step 1: Customer Segments -->
-        <div class="section-card" data-section="customerSegments">
-          <div class="section-header">
-            <span class="step-number">1</span>
-            <h2 class="section-title">Customer Segments</h2>
-            <button type="button" class="btn-help" aria-label="Toggle help for Customer Segments" data-help-toggle="customerSegments">?</button>
-          </div>
-          <div class="help-panel" id="help-customerSegments" hidden></div>
-          <div class="section-fields">
-            <label for="field-customerSegments">Who are your target customers?</label>
-            <textarea id="field-customerSegments" data-field="customerSegments.content" placeholder="List your target customer segments..." rows="3"></textarea>
-            <label for="field-customerSegments-earlyAdopters" class="sub-label">Early Adopters</label>
-            <textarea id="field-customerSegments-earlyAdopters" data-field="customerSegments.earlyAdopters" placeholder="Who are your ideal first customers?" rows="2"></textarea>
-          </div>
-        </div>
-
-        <!-- Step 2: Problem -->
+        <!-- Step 1: Problem -->
         <div class="section-card" data-section="problem">
           <div class="section-header">
-            <span class="step-number">2</span>
+            <span class="step-number">1</span>
             <h2 class="section-title">Problem</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Problem" data-help-toggle="problem">?</button>
           </div>
@@ -69,31 +53,55 @@
           <div class="section-fields">
             <label for="field-problem">Top 1-3 problems your customers face</label>
             <textarea id="field-problem" data-field="problem.content" placeholder="1. &#10;2. &#10;3. " rows="3"></textarea>
-            <label for="field-problem-existingAlternatives" class="sub-label">Existing Alternatives</label>
-            <textarea id="field-problem-existingAlternatives" data-field="problem.existingAlternatives" placeholder="How do customers solve these problems today?" rows="2"></textarea>
           </div>
         </div>
 
-        <!-- Step 3: Unique Value Proposition -->
-        <div class="section-card" data-section="uvp">
+        <!-- Step 2: Existing Alternatives -->
+        <div class="section-card" data-section="existingAlternatives">
+          <div class="section-header">
+            <span class="step-number">2</span>
+            <h2 class="section-title">Existing Alternatives</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Existing Alternatives" data-help-toggle="existingAlternatives">?</button>
+          </div>
+          <div class="help-panel" id="help-existingAlternatives" hidden></div>
+          <div class="section-fields">
+            <label for="field-existingAlternatives">How do customers solve these problems today?</label>
+            <textarea id="field-existingAlternatives" data-field="existingAlternatives.content" placeholder="List competitors, workarounds, and 'do nothing'..." rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 3: Early Adopters -->
+        <div class="section-card" data-section="earlyAdopters">
           <div class="section-header">
             <span class="step-number">3</span>
-            <h2 class="section-title">Unique Value Proposition</h2>
-            <button type="button" class="btn-help" aria-label="Toggle help for Unique Value Proposition" data-help-toggle="uvp">?</button>
+            <h2 class="section-title">Early Adopters</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Early Adopters" data-help-toggle="earlyAdopters">?</button>
           </div>
-          <div class="help-panel" id="help-uvp" hidden></div>
+          <div class="help-panel" id="help-earlyAdopters" hidden></div>
           <div class="section-fields">
-            <label for="field-uvp">Single, clear, compelling message that turns a visitor into a customer</label>
-            <textarea id="field-uvp" data-field="uvp.content" placeholder="Why are you different and worth paying attention to?" rows="3"></textarea>
-            <label for="field-uvp-highLevelConcept" class="sub-label">High-Level Concept</label>
-            <textarea id="field-uvp-highLevelConcept" data-field="uvp.highLevelConcept" placeholder='e.g., "YouTube = Flickr for video"' rows="1"></textarea>
+            <label for="field-earlyAdopters">Who are your ideal first customers?</label>
+            <textarea id="field-earlyAdopters" data-field="earlyAdopters.content" placeholder="Describe the specific people who need this most urgently..." rows="3"></textarea>
           </div>
         </div>
 
-        <!-- Step 4: Solution -->
-        <div class="section-card" data-section="solution">
+        <!-- Step 4: Customer Segments -->
+        <div class="section-card" data-section="customerSegments">
           <div class="section-header">
             <span class="step-number">4</span>
+            <h2 class="section-title">Customer Segments</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Customer Segments" data-help-toggle="customerSegments">?</button>
+          </div>
+          <div class="help-panel" id="help-customerSegments" hidden></div>
+          <div class="section-fields">
+            <label for="field-customerSegments">Who are your target customers?</label>
+            <textarea id="field-customerSegments" data-field="customerSegments.content" placeholder="List your target customer segments..." rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 5: Solution -->
+        <div class="section-card" data-section="solution">
+          <div class="section-header">
+            <span class="step-number">5</span>
             <h2 class="section-title">Solution</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Solution" data-help-toggle="solution">?</button>
           </div>
@@ -104,10 +112,52 @@
           </div>
         </div>
 
-        <!-- Step 5: Channels -->
+        <!-- Step 6: Unique Value Proposition -->
+        <div class="section-card" data-section="uvp">
+          <div class="section-header">
+            <span class="step-number">6</span>
+            <h2 class="section-title">Unique Value Proposition</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Unique Value Proposition" data-help-toggle="uvp">?</button>
+          </div>
+          <div class="help-panel" id="help-uvp" hidden></div>
+          <div class="section-fields">
+            <label for="field-uvp">Single, clear, compelling message that turns a visitor into a customer</label>
+            <textarea id="field-uvp" data-field="uvp.content" placeholder="Why are you different and worth paying attention to?" rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 7: High-Level Concept -->
+        <div class="section-card" data-section="highLevelConcept">
+          <div class="section-header">
+            <span class="step-number">7</span>
+            <h2 class="section-title">High-Level Concept</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for High-Level Concept" data-help-toggle="highLevelConcept">?</button>
+          </div>
+          <div class="help-panel" id="help-highLevelConcept" hidden></div>
+          <div class="section-fields">
+            <label for="field-highLevelConcept">Your elevator pitch — a short analogy people instantly understand</label>
+            <textarea id="field-highLevelConcept" data-field="highLevelConcept.content" placeholder='e.g., "YouTube = Flickr for video"' rows="2"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 8: Unfair Advantage -->
+        <div class="section-card" data-section="unfairAdvantage">
+          <div class="section-header">
+            <span class="step-number">8</span>
+            <h2 class="section-title">Unfair Advantage</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Unfair Advantage" data-help-toggle="unfairAdvantage">?</button>
+          </div>
+          <div class="help-panel" id="help-unfairAdvantage" hidden></div>
+          <div class="section-fields">
+            <label for="field-unfairAdvantage">Something that cannot be easily copied or bought</label>
+            <textarea id="field-unfairAdvantage" data-field="unfairAdvantage.content" placeholder="What gives you a defensible advantage?" rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 9: Channels -->
         <div class="section-card" data-section="channels">
           <div class="section-header">
-            <span class="step-number">5</span>
+            <span class="step-number">9</span>
             <h2 class="section-title">Channels</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Channels" data-help-toggle="channels">?</button>
           </div>
@@ -118,24 +168,10 @@
           </div>
         </div>
 
-        <!-- Step 6: Revenue Streams -->
-        <div class="section-card" data-section="revenueStreams">
-          <div class="section-header">
-            <span class="step-number">6</span>
-            <h2 class="section-title">Revenue Streams</h2>
-            <button type="button" class="btn-help" aria-label="Toggle help for Revenue Streams" data-help-toggle="revenueStreams">?</button>
-          </div>
-          <div class="help-panel" id="help-revenueStreams" hidden></div>
-          <div class="section-fields">
-            <label for="field-revenueStreams">How will you make money?</label>
-            <textarea id="field-revenueStreams" data-field="revenueStreams.content" placeholder="Pricing model, revenue sources..." rows="3"></textarea>
-          </div>
-        </div>
-
-        <!-- Step 7: Cost Structure -->
+        <!-- Step 10: Cost Structure -->
         <div class="section-card" data-section="costStructure">
           <div class="section-header">
-            <span class="step-number">7</span>
+            <span class="step-number">10</span>
             <h2 class="section-title">Cost Structure</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Cost Structure" data-help-toggle="costStructure">?</button>
           </div>
@@ -146,10 +182,24 @@
           </div>
         </div>
 
-        <!-- Step 8: Key Metrics -->
+        <!-- Step 11: Revenue Streams -->
+        <div class="section-card" data-section="revenueStreams">
+          <div class="section-header">
+            <span class="step-number">11</span>
+            <h2 class="section-title">Revenue Streams</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Revenue Streams" data-help-toggle="revenueStreams">?</button>
+          </div>
+          <div class="help-panel" id="help-revenueStreams" hidden></div>
+          <div class="section-fields">
+            <label for="field-revenueStreams">How will you make money?</label>
+            <textarea id="field-revenueStreams" data-field="revenueStreams.content" placeholder="Pricing model, revenue sources..." rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 12: Key Metrics -->
         <div class="section-card" data-section="keyMetrics">
           <div class="section-header">
-            <span class="step-number">8</span>
+            <span class="step-number">12</span>
             <h2 class="section-title">Key Metrics</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Key Metrics" data-help-toggle="keyMetrics">?</button>
           </div>
@@ -157,20 +207,6 @@
           <div class="section-fields">
             <label for="field-keyMetrics">Key numbers that tell you how your business is doing</label>
             <textarea id="field-keyMetrics" data-field="keyMetrics.content" placeholder="3-5 key activities you measure..." rows="3"></textarea>
-          </div>
-        </div>
-
-        <!-- Step 9: Unfair Advantage -->
-        <div class="section-card" data-section="unfairAdvantage">
-          <div class="section-header">
-            <span class="step-number">9</span>
-            <h2 class="section-title">Unfair Advantage</h2>
-            <button type="button" class="btn-help" aria-label="Toggle help for Unfair Advantage" data-help-toggle="unfairAdvantage">?</button>
-          </div>
-          <div class="help-panel" id="help-unfairAdvantage" hidden></div>
-          <div class="section-fields">
-            <label for="field-unfairAdvantage">Something that cannot be easily copied or bought</label>
-            <textarea id="field-unfairAdvantage" data-field="unfairAdvantage.content" placeholder="What gives you a defensible advantage?" rows="3"></textarea>
           </div>
         </div>
 
@@ -198,7 +234,7 @@
             <div class="cell-content" id="view-problem"></div>
             <div class="cell-sub">
               <h4 class="cell-sub-title">Existing Alternatives</h4>
-              <div class="cell-sub-content" id="view-problem-existingAlternatives"></div>
+              <div class="cell-sub-content" id="view-existingAlternatives"></div>
             </div>
           </div>
 
@@ -212,7 +248,7 @@
             <div class="cell-content" id="view-uvp"></div>
             <div class="cell-sub">
               <h4 class="cell-sub-title">High-Level Concept</h4>
-              <div class="cell-sub-content" id="view-uvp-highLevelConcept"></div>
+              <div class="cell-sub-content" id="view-highLevelConcept"></div>
             </div>
           </div>
 
@@ -226,7 +262,7 @@
             <div class="cell-content" id="view-customerSegments"></div>
             <div class="cell-sub">
               <h4 class="cell-sub-title">Early Adopters</h4>
-              <div class="cell-sub-content" id="view-customerSegments-earlyAdopters"></div>
+              <div class="cell-sub-content" id="view-earlyAdopters"></div>
             </div>
           </div>
 

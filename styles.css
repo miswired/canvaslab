@@ -377,9 +377,10 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
+  min-width: 28px;
   height: 28px;
-  border-radius: 50%;
+  padding: 0 6px;
+  border-radius: 14px;
   background: var(--step-bg);
   color: var(--step-text);
   font-size: var(--font-size-sm);
