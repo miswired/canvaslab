@@ -22,10 +22,21 @@ const HELP_CONTENT = {
       { text: 'Why Lean Canvas vs BMC — Ash Maurya', url: 'https://www.linkedin.com/pulse/why-lean-canvas-vs-business-model-ash-maurya' },
     ],
     tools: [
-      { text: 'Google Trends', url: 'https://trends.google.com/' },
-      { text: 'AnswerThePublic', url: 'https://answerthepublic.com/' },
-      { text: 'SurveyMonkey', url: 'https://www.surveymonkey.com/' },
+      { text: 'Google Trends', url: 'https://trends.google.com/', pricing: 'free' },
+      { text: 'AnswerThePublic', url: 'https://answerthepublic.com/', pricing: 'freemium' },
+      { text: 'Google Forms', url: 'https://docs.google.com/forms/', pricing: 'free' },
     ],
+    aiPrompt: `I'm building a [type of product/service] for [target audience]. Help me identify and validate the top 3 problems my target customers face.
+
+For each problem:
+1. Describe the problem from the customer's perspective
+2. Explain why it's painful enough to motivate action
+3. Suggest how I could validate this problem is real (customer interviews, search data, forums, etc.)
+
+My initial idea: [describe your idea]
+My target audience: [describe your customers]
+
+Please be specific and avoid vague problems. Each problem should be observable and measurable.`,
   },
 
   existingAlternatives: {
@@ -43,11 +54,26 @@ const HELP_CONTENT = {
       { text: 'What is Lean Canvas? — LEANFoundry', url: 'https://www.leanfoundry.com/articles/what-is-lean-canvas' },
     ],
     tools: [
-      { text: 'G2 (Competitor Reviews)', url: 'https://www.g2.com/' },
-      { text: 'Crunchbase (competitive research)', url: 'https://www.crunchbase.com/' },
-      { text: 'SimilarWeb', url: 'https://www.similarweb.com/' },
-      { text: 'Product Hunt', url: 'https://www.producthunt.com/' },
+      { text: 'Product Hunt', url: 'https://www.producthunt.com/', pricing: 'free' },
+      { text: 'G2', url: 'https://www.g2.com/', pricing: 'free' },
+      { text: 'SimilarWeb', url: 'https://www.similarweb.com/', pricing: 'freemium' },
+      { text: 'Meta Ad Library', url: 'https://www.facebook.com/ads/library/', pricing: 'free' },
     ],
+    aiPrompt: `I'm building a [type of product/service] that solves [problem]. Help me map out all the existing alternatives my potential customers use today.
+
+Include:
+1. Direct competitors (other products/services solving the same problem)
+2. Indirect alternatives (workarounds, manual processes, spreadsheets, hiring someone)
+3. The "do nothing" option — why some people just live with the problem
+
+For each alternative, describe:
+- What it does well
+- Where it falls short
+- Approximate cost to the customer
+- Why a customer might switch away from it
+
+My product idea: [describe your idea]
+The problems I'm solving: [list your top 1-3 problems]`,
   },
 
   earlyAdopters: {
@@ -66,10 +92,28 @@ const HELP_CONTENT = {
       { text: 'Customer Segments — LEANFoundry', url: 'https://www.leanfoundry.com/articles/what-is-lean-canvas' },
     ],
     tools: [
-      { text: 'Reddit (find your niche)', url: 'https://www.reddit.com/' },
-      { text: 'SparkToro (Audience Research)', url: 'https://sparktoro.com/' },
-      { text: 'Facebook Groups', url: 'https://www.facebook.com/groups/' },
+      { text: 'Reddit', url: 'https://www.reddit.com/', pricing: 'free' },
+      { text: 'SparkToro', url: 'https://sparktoro.com/', pricing: 'freemium' },
+      { text: 'Facebook Groups', url: 'https://www.facebook.com/groups/', pricing: 'free' },
     ],
+    aiPrompt: `Help me create a detailed profile of my ideal first customer (early adopter) for my [product/service].
+
+This person should:
+- Have the problem most urgently — it's a "hair on fire" problem for them
+- Already be trying to solve it with existing alternatives (and frustrated)
+- Be willing to use an imperfect early product and give feedback
+- Be reachable — I know where to find them
+
+Describe them as a specific person, not a demographic. Include:
+- Their daily routine and frustrations
+- What they've already tried and why it didn't work
+- Where they spend time online (specific subreddits, forums, social accounts)
+- What would make them try a new solution immediately
+- What would make them tell their friends about it
+
+My product: [describe your product]
+Problems I'm solving: [list your problems]
+Existing alternatives they use: [list alternatives]`,
   },
 
   customerSegments: {
@@ -87,11 +131,26 @@ const HELP_CONTENT = {
       { text: 'Running Lean by Ash Maurya', url: 'https://www.leanfoundry.com/running-lean-book' },
     ],
     tools: [
-      { text: 'Google Trends', url: 'https://trends.google.com/' },
-      { text: 'Census Data Explorer', url: 'https://data.census.gov/' },
-      { text: 'SparkToro (Audience Research)', url: 'https://sparktoro.com/' },
-      { text: 'Statista', url: 'https://www.statista.com/' },
+      { text: 'Census Data Explorer', url: 'https://data.census.gov/', pricing: 'free' },
+      { text: 'Statista', url: 'https://www.statista.com/', pricing: 'freemium' },
+      { text: 'Google Trends', url: 'https://trends.google.com/', pricing: 'free' },
+      { text: 'Think with Google', url: 'https://www.thinkwithgoogle.com/', pricing: 'free' },
     ],
+    aiPrompt: `Help me define the customer segments for my [product/service].
+
+For each segment, provide:
+1. Demographics (age, income, location, occupation)
+2. Behaviors and psychographics (what they value, how they spend time)
+3. How they currently solve the problem
+4. Estimated market size (TAM, SAM, SOM if possible)
+5. Why they would pay for my solution
+
+Start with the narrowest, most urgent segment (my early adopters) and then describe 1-2 broader segments I could expand into later.
+
+My product: [describe your product]
+My ideal early adopter: [describe them]
+Problems I'm solving: [list problems]
+My pricing model: [if known]`,
   },
 
   solution: {
@@ -109,10 +168,27 @@ const HELP_CONTENT = {
       { text: 'MVP Approach — Running Lean', url: 'https://www.leanfoundry.com/running-lean-book' },
     ],
     tools: [
-      { text: 'Figma (prototype)', url: 'https://www.figma.com/' },
-      { text: 'Balsamiq (wireframes)', url: 'https://balsamiq.com/' },
-      { text: 'Miro (brainstorm)', url: 'https://miro.com/' },
+      { text: 'Figma', url: 'https://www.figma.com/', pricing: 'freemium' },
+      { text: 'Excalidraw', url: 'https://excalidraw.com/', pricing: 'free' },
+      { text: 'Balsamiq', url: 'https://balsamiq.com/', pricing: 'paid' },
     ],
+    aiPrompt: `I'm solving these problems for [target audience]:
+1. [Problem 1]
+2. [Problem 2]
+3. [Problem 3]
+
+Help me define the minimum viable solution (MVP) — the simplest possible product that addresses each problem.
+
+For each problem, suggest:
+1. A specific feature or capability (mapped to that problem)
+2. How the customer would experience it (user story format)
+3. The simplest way to build/test it
+4. What I should NOT build yet (and why)
+
+Keep it minimal — I want the smallest thing I can build to start learning from real customers.
+
+My target customer: [describe them]
+Existing alternatives they use: [list them]`,
   },
 
   uvp: {
@@ -132,9 +208,25 @@ const HELP_CONTENT = {
       { text: 'Value Proposition Design — Strategyzer', url: 'https://www.strategyzer.com/library/the-value-proposition-canvas' },
     ],
     tools: [
-      { text: 'Hemingway Editor (clarity)', url: 'https://hemingwayapp.com/' },
-      { text: 'CoSchedule Headline Analyzer', url: 'https://coschedule.com/headline-analyzer' },
+      { text: 'Hemingway Editor', url: 'https://hemingwayapp.com/', pricing: 'free' },
+      { text: 'CoSchedule Headline Analyzer', url: 'https://coschedule.com/headline-analyzer', pricing: 'free' },
     ],
+    aiPrompt: `Help me craft a Unique Value Proposition (UVP) for my [product/service].
+
+The UVP should:
+- Be a single, clear sentence under 120 characters
+- Explain why I'm different and worth paying attention to
+- Target my early adopters specifically, not the mainstream
+- Focus on the end result the customer gets, not features
+- Follow the formula: "We help [customer] achieve [outcome] by [approach]"
+
+Generate 5 options ranging from bold to conservative, and explain the strengths of each.
+
+My product: [describe your product]
+My #1 problem I solve: [describe]
+My ideal customer: [describe]
+My key differentiator vs. alternatives: [describe]
+My solution: [describe briefly]`,
   },
 
   highLevelConcept: {
@@ -151,10 +243,21 @@ const HELP_CONTENT = {
       { text: 'High-Level Concept — LEANFoundry', url: 'https://www.leanfoundry.com/articles/what-is-lean-canvas' },
       { text: 'Running Lean by Ash Maurya', url: 'https://www.leanfoundry.com/running-lean-book' },
     ],
-    tools: [
-      { text: 'ChatGPT (brainstorm analogies)', url: 'https://chat.openai.com/' },
-      { text: 'Hemingway Editor (clarity)', url: 'https://hemingwayapp.com/' },
-    ],
+    tools: [],
+    aiPrompt: `Help me create a High-Level Concept (elevator pitch) for my [product/service] using the "X for Y" format (e.g., "YouTube = Flickr for video", "Spotify for meal planning").
+
+Generate 5-7 options. For each:
+- Use a well-known company or product as the reference point
+- Target a specific market or use case
+- Make it instantly understandable to anyone, even outside my industry
+- Make people curious enough to ask "tell me more"
+
+Then recommend your top pick and explain why it works best.
+
+My product: [describe your product]
+My UVP: [your unique value proposition]
+What makes us unique: [describe]
+My target market: [describe]`,
   },
 
   unfairAdvantage: {
@@ -173,9 +276,26 @@ const HELP_CONTENT = {
       { text: 'Real vs Fake Advantages — Ash Maurya', url: 'https://www.businessmodelcompetition.com/ash-maurya--lean-canvas.html' },
     ],
     tools: [
-      { text: 'Crunchbase (competitive research)', url: 'https://www.crunchbase.com/' },
-      { text: 'Google Patents', url: 'https://patents.google.com/' },
+      { text: 'Google Patents', url: 'https://patents.google.com/', pricing: 'free' },
+      { text: 'Crunchbase', url: 'https://www.crunchbase.com/', pricing: 'freemium' },
     ],
+    aiPrompt: `Help me identify and evaluate my potential unfair advantages for [product/service].
+
+An unfair advantage is something that cannot be easily copied or bought by a well-funded competitor within 6 months.
+
+Real unfair advantages: network effects, proprietary data, insider knowledge, expert endorsements, dream team, existing community/audience, patents/IP, regulatory advantages
+
+NOT real unfair advantages: passion, code, features, first-mover advantage, working harder
+
+Based on my situation, help me:
+1. Identify 3-5 potential unfair advantages I might have (or could build)
+2. Rate each on a 1-5 scale for defensibility
+3. Suggest a strategy for strengthening my strongest advantage over time
+
+My product: [describe your product]
+My background/team: [describe your experience and team]
+What I think my advantage might be: [describe]
+My competitive landscape: [describe key competitors]`,
   },
 
   channels: {
@@ -193,11 +313,27 @@ const HELP_CONTENT = {
       { text: 'Traction by Gabriel Weinberg', url: 'https://www.goodreads.com/book/show/22091581-traction' },
     ],
     tools: [
-      { text: 'Google Keyword Planner', url: 'https://ads.google.com/home/tools/keyword-planner/' },
-      { text: 'Ubersuggest', url: 'https://neilpatel.com/ubersuggest/' },
-      { text: 'Meta Ads Library', url: 'https://www.facebook.com/ads/library/' },
-      { text: 'SimilarWeb', url: 'https://www.similarweb.com/' },
+      { text: 'Google Keyword Planner', url: 'https://ads.google.com/home/tools/keyword-planner/', pricing: 'free' },
+      { text: 'Google Search Console', url: 'https://search.google.com/search-console/', pricing: 'free' },
+      { text: 'Ubersuggest', url: 'https://neilpatel.com/ubersuggest/', pricing: 'freemium' },
+      { text: 'Meta Ad Library', url: 'https://www.facebook.com/ads/library/', pricing: 'free' },
     ],
+    aiPrompt: `Help me identify and prioritize the best customer acquisition channels for my [product/service].
+
+For each channel, provide:
+1. Why it fits my target audience
+2. Estimated cost (free, low, medium, high)
+3. Time to first results (days, weeks, months)
+4. Scalability potential (low, medium, high)
+5. How to test it with minimal investment ($0-100)
+
+Then rank the top 3 channels I should focus on first, with a specific 30-day action plan for each.
+
+My target customer: [describe]
+Where they spend time online: [describe]
+My budget for marketing: [describe]
+My product type: [B2B/B2C/marketplace/etc.]
+My stage: [idea/MVP/launched]`,
   },
 
   costStructure: {
@@ -215,9 +351,32 @@ const HELP_CONTENT = {
       { text: 'Lean Canvas Cost Guide — Railsware', url: 'https://railsware.com/blog/lean-canvas/' },
     ],
     tools: [
-      { text: 'Google Sheets (financial model)', url: 'https://sheets.google.com/' },
-      { text: 'Causal (financial planning)', url: 'https://www.causal.app/' },
+      { text: 'Google Sheets', url: 'https://sheets.google.com/', pricing: 'free' },
+      { text: 'SCORE Financial Templates', url: 'https://www.score.org/resource-article/financial-projections-template', pricing: 'free' },
     ],
+    aiPrompt: `Help me estimate the costs for my [product/service] in two phases:
+
+**Phase 1 — MVP (first 3 months):**
+What does it cost to build and launch the minimum viable product?
+
+**Phase 2 — Monthly Operations:**
+What's the ongoing monthly burn rate after launch?
+
+Include these categories:
+- Development (build vs. buy vs. outsource)
+- Hosting/infrastructure
+- Tools and software subscriptions
+- Marketing and customer acquisition
+- Legal (incorporation, terms of service, etc.)
+- Team/contractors
+- Any domain-specific costs
+
+Then calculate my breakeven point: how many customers at [price point] do I need to cover monthly costs?
+
+My product: [describe your product]
+My pricing model: [describe]
+My team situation: [solo founder / co-founders / have developers]
+My funding: [bootstrapped / seeking investment / have runway of X months]`,
   },
 
   revenueStreams: {
@@ -235,10 +394,24 @@ const HELP_CONTENT = {
       { text: 'Pricing Strategy — Running Lean', url: 'https://www.leanfoundry.com/running-lean-book' },
     ],
     tools: [
-      { text: 'Stripe (payment infrastructure)', url: 'https://stripe.com/' },
-      { text: 'PriceIntelligently', url: 'https://www.priceintelligently.com/' },
-      { text: 'Competitor pricing research', url: 'https://www.g2.com/' },
+      { text: 'PriceIntelligently', url: 'https://www.priceintelligently.com/', pricing: 'paid' },
+      { text: 'G2 (competitor pricing)', url: 'https://www.g2.com/', pricing: 'free' },
     ],
+    aiPrompt: `Help me design the revenue model for my [product/service].
+
+Consider and recommend:
+1. Best pricing model for my situation (subscription, freemium, one-time, marketplace cut, usage-based, etc.) and why
+2. Specific price points with justification based on value delivered
+3. What existing alternatives charge (for comparison)
+4. Free vs. paid feature split (if freemium)
+5. Revenue projections for first 12 months (conservative, moderate, optimistic)
+6. What price would make this a "no-brainer" purchase for my customer?
+
+My product: [describe your product]
+My target customer: [describe them and their willingness to pay]
+Existing alternatives and their pricing: [list them]
+My monthly cost structure: [monthly burn rate]
+My target market size: [number of potential customers]`,
   },
 
   keyMetrics: {
@@ -256,13 +429,121 @@ const HELP_CONTENT = {
       { text: 'Lean Analytics by Alistair Croll', url: 'https://www.goodreads.com/book/show/16033602-lean-analytics' },
     ],
     tools: [
-      { text: 'Google Analytics', url: 'https://analytics.google.com/' },
-      { text: 'Mixpanel', url: 'https://mixpanel.com/' },
-      { text: 'Amplitude', url: 'https://amplitude.com/' },
-      { text: 'Baremetrics (SaaS metrics)', url: 'https://baremetrics.com/' },
+      { text: 'Google Analytics', url: 'https://analytics.google.com/', pricing: 'free' },
+      { text: 'Mixpanel', url: 'https://mixpanel.com/', pricing: 'freemium' },
+      { text: 'PostHog', url: 'https://posthog.com/', pricing: 'free' },
     ],
+    aiPrompt: `Help me identify the 3-5 key metrics I should track for my [product/service].
+
+For each metric:
+1. What it measures and why it matters at my current stage
+2. How to calculate it (exact formula)
+3. What a good benchmark/target looks like for my industry
+4. How often I should measure it (daily, weekly, monthly)
+5. What tool I can use to track it (preferably free)
+
+Also identify:
+- My ONE "minimum success criterion" — the single number that defines if this is working
+- Which metrics are leading indicators (predict the future) vs. trailing indicators (measure the past)
+- What "pirate metrics" (AARRR) stage I should focus on first
+
+My product type: [SaaS/marketplace/e-commerce/mobile app/etc.]
+My business model: [subscription/freemium/one-time/etc.]
+My current stage: [pre-launch/MVP/launched with X users]
+My revenue model: [describe]`,
   },
 };
+
+// === Resource Panel Data (All tools grouped by category) ===
+const RESOURCE_PANEL_DATA = [
+  {
+    category: 'Problem Discovery & Validation',
+    icon: '🔍',
+    tools: [
+      { name: 'Google Trends', url: 'https://trends.google.com/', description: 'Explore search interest over time to validate demand for problems', pricing: 'free' },
+      { name: 'AnswerThePublic', url: 'https://answerthepublic.com/', description: 'Discover what questions people ask about any topic', pricing: 'freemium' },
+      { name: 'GummySearch', url: 'https://gummysearch.com/', description: 'Monitor Reddit communities for pain points and unmet needs', pricing: 'paid' },
+      { name: 'Google Forms', url: 'https://docs.google.com/forms/', description: 'Create free surveys for customer discovery interviews', pricing: 'free' },
+      { name: 'Typeform', url: 'https://www.typeform.com/', description: 'Beautiful, conversational surveys for customer research', pricing: 'freemium' },
+    ],
+  },
+  {
+    category: 'Competitive & Market Research',
+    icon: '📊',
+    tools: [
+      { name: 'Product Hunt', url: 'https://www.producthunt.com/', description: 'Discover new products, startups, and potential competitors', pricing: 'free' },
+      { name: 'G2', url: 'https://www.g2.com/', description: 'Software reviews, competitor comparisons, and pricing data', pricing: 'free' },
+      { name: 'Capterra', url: 'https://www.capterra.com/', description: 'Software comparison directory with user reviews', pricing: 'free' },
+      { name: 'SimilarWeb', url: 'https://www.similarweb.com/', description: 'Analyze competitor website traffic and audience data', pricing: 'freemium' },
+      { name: 'Crunchbase', url: 'https://www.crunchbase.com/', description: 'Research startup funding, team data, and company details', pricing: 'freemium' },
+      { name: 'Meta Ad Library', url: 'https://www.facebook.com/ads/library/', description: 'See all active ads from any company on Facebook/Instagram', pricing: 'free' },
+      { name: 'Google Patents', url: 'https://patents.google.com/', description: 'Search existing patents and intellectual property', pricing: 'free' },
+    ],
+  },
+  {
+    category: 'Audience & Customer Research',
+    icon: '👥',
+    tools: [
+      { name: 'SparkToro', url: 'https://sparktoro.com/', description: 'Audience intelligence — discover where your customers spend time', pricing: 'freemium' },
+      { name: 'Reddit', url: 'https://www.reddit.com/', description: 'Find niche communities where your target customers gather', pricing: 'free' },
+      { name: 'Facebook Groups', url: 'https://www.facebook.com/groups/', description: 'Find and engage customer communities by interest', pricing: 'free' },
+      { name: 'Census Data Explorer', url: 'https://data.census.gov/', description: 'US demographic and economic data for market sizing', pricing: 'free' },
+      { name: 'Statista', url: 'https://www.statista.com/', description: 'Statistics, market data, and industry reports', pricing: 'freemium' },
+      { name: 'Think with Google', url: 'https://www.thinkwithgoogle.com/', description: 'Consumer insights, trends, and marketing research from Google', pricing: 'free' },
+    ],
+  },
+  {
+    category: 'Prototyping & Design',
+    icon: '🎨',
+    tools: [
+      { name: 'Figma', url: 'https://www.figma.com/', description: 'Collaborative design tool for prototypes and mockups', pricing: 'freemium' },
+      { name: 'Excalidraw', url: 'https://excalidraw.com/', description: 'Quick whiteboard-style sketches and diagrams', pricing: 'free' },
+      { name: 'Balsamiq', url: 'https://balsamiq.com/', description: 'Rapid low-fidelity wireframing tool', pricing: 'paid' },
+      { name: 'Penpot', url: 'https://penpot.app/', description: 'Open-source design and prototyping platform', pricing: 'free' },
+    ],
+  },
+  {
+    category: 'Copywriting & Messaging',
+    icon: '✍️',
+    tools: [
+      { name: 'Hemingway Editor', url: 'https://hemingwayapp.com/', description: 'Check writing clarity, readability, and conciseness', pricing: 'free' },
+      { name: 'CoSchedule Headline Analyzer', url: 'https://coschedule.com/headline-analyzer', description: 'Score and improve headlines for emotional impact', pricing: 'free' },
+      { name: 'Grammarly', url: 'https://www.grammarly.com/', description: 'Writing assistant for grammar, tone, and clarity', pricing: 'freemium' },
+    ],
+  },
+  {
+    category: 'Marketing & Distribution',
+    icon: '📢',
+    tools: [
+      { name: 'Google Keyword Planner', url: 'https://ads.google.com/home/tools/keyword-planner/', description: 'Research search keywords and monthly volumes', pricing: 'free' },
+      { name: 'Google Search Console', url: 'https://search.google.com/search-console/', description: 'Monitor your website\'s search performance', pricing: 'free' },
+      { name: 'Ubersuggest', url: 'https://neilpatel.com/ubersuggest/', description: 'SEO keyword research and content opportunity analysis', pricing: 'freemium' },
+      { name: 'Answer Socrates', url: 'https://answersocrates.com/', description: 'Find questions people are searching for on any topic', pricing: 'free' },
+      { name: 'Meta Ad Library', url: 'https://www.facebook.com/ads/library/', description: 'Research competitor advertising strategies', pricing: 'free' },
+      { name: 'TikTok Creative Center', url: 'https://ads.tiktok.com/business/creativecenter/', description: 'Trending content, hashtags, and ad inspiration', pricing: 'free' },
+    ],
+  },
+  {
+    category: 'Financial Planning',
+    icon: '💰',
+    tools: [
+      { name: 'Google Sheets', url: 'https://sheets.google.com/', description: 'Build financial models and projections', pricing: 'free' },
+      { name: 'SCORE Financial Templates', url: 'https://www.score.org/resource-article/financial-projections-template', description: 'Free startup financial plan and projection templates', pricing: 'free' },
+      { name: 'Causal', url: 'https://www.causal.app/', description: 'Visual financial modeling and forecasting tool', pricing: 'freemium' },
+    ],
+  },
+  {
+    category: 'Analytics & Metrics',
+    icon: '📈',
+    tools: [
+      { name: 'Google Analytics', url: 'https://analytics.google.com/', description: 'Website and app traffic analytics', pricing: 'free' },
+      { name: 'PostHog', url: 'https://posthog.com/', description: 'Open-source product analytics, session replay, and feature flags', pricing: 'free' },
+      { name: 'Mixpanel', url: 'https://mixpanel.com/', description: 'Event-based product analytics and funnel analysis', pricing: 'freemium' },
+      { name: 'Hotjar', url: 'https://www.hotjar.com/', description: 'Heatmaps, session recordings, and user behavior insights', pricing: 'freemium' },
+      { name: 'Baremetrics', url: 'https://baremetrics.com/', description: 'SaaS revenue, churn, and subscription analytics', pricing: 'paid' },
+    ],
+  },
+];
 
 // === Section Metadata (custom fill order — 12 steps) ===
 const SECTIONS = [
@@ -421,9 +702,20 @@ function renderHelpPanels() {
     if (help.tools?.length) {
       html += '<h4>Research Tools</h4><div class="help-links">';
       for (const tool of help.tools) {
-        html += `<a href="${escapeHtml(tool.url)}" target="_blank" rel="noopener">${escapeHtml(tool.text)}</a>`;
+        const badge = tool.pricing ? ` <span class="pricing-badge pricing-${tool.pricing}">${tool.pricing}</span>` : '';
+        html += `<a href="${escapeHtml(tool.url)}" target="_blank" rel="noopener">${escapeHtml(tool.text)}${badge}</a>`;
       }
       html += '</div>';
+    }
+
+    if (help.aiPrompt) {
+      html += `<div class="ai-prompt-section">
+        <button type="button" class="ai-prompt-toggle" data-ai-toggle="${section.key}">AI Prompt</button>
+        <div class="ai-prompt-body" id="ai-prompt-${section.key}" hidden>
+          <pre class="ai-prompt-text" id="prompt-text-${section.key}">${escapeHtml(help.aiPrompt)}</pre>
+          <button type="button" class="btn btn--secondary btn-copy-prompt" data-copy-prompt="${section.key}">Copy Prompt</button>
+        </div>
+      </div>`;
     }
 
     panel.innerHTML = html;
@@ -443,6 +735,100 @@ function toggleHelp(sectionKey) {
     panel.setAttribute('hidden', '');
     btn.setAttribute('aria-expanded', 'false');
   }
+}
+
+function toggleAiPrompt(sectionKey) {
+  const body = document.getElementById(`ai-prompt-${sectionKey}`);
+  const btn = document.querySelector(`[data-ai-toggle="${sectionKey}"]`);
+  if (!body || !btn) return;
+
+  const isHidden = body.hasAttribute('hidden');
+  if (isHidden) {
+    body.removeAttribute('hidden');
+    btn.classList.add('expanded');
+  } else {
+    body.setAttribute('hidden', '');
+    btn.classList.remove('expanded');
+  }
+}
+
+function copyAiPrompt(sectionKey) {
+  const promptText = HELP_CONTENT[sectionKey]?.aiPrompt;
+  if (!promptText) return;
+
+  const btn = document.querySelector(`[data-copy-prompt="${sectionKey}"]`);
+
+  navigator.clipboard.writeText(promptText).then(() => {
+    if (btn) {
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = original; }, 2000);
+    }
+  }).catch(() => {
+    // Fallback: select text for manual copy
+    const el = document.getElementById(`prompt-text-${sectionKey}`);
+    if (el) {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  });
+}
+
+// === Resource Panel ===
+function renderResourcePanel() {
+  const container = document.getElementById('resourcePanelContent');
+  if (!container) return;
+
+  let html = '';
+  for (const group of RESOURCE_PANEL_DATA) {
+    html += `<div class="resource-group">
+      <button type="button" class="resource-group-toggle" data-resource-group>
+        <span class="resource-group-icon">${group.icon}</span>
+        <span class="resource-group-title">${escapeHtml(group.category)}</span>
+        <span class="resource-group-count">${group.tools.length}</span>
+        <span class="resource-group-arrow"></span>
+      </button>
+      <div class="resource-group-items">`;
+
+    for (const tool of group.tools) {
+      html += `<a href="${escapeHtml(tool.url)}" target="_blank" rel="noopener" class="resource-item">
+        <div class="resource-item-header">
+          <span class="resource-item-name">${escapeHtml(tool.name)}</span>
+          <span class="pricing-badge pricing-${tool.pricing}">${tool.pricing}</span>
+        </div>
+        <div class="resource-item-desc">${escapeHtml(tool.description)}</div>
+      </a>`;
+    }
+
+    html += '</div></div>';
+  }
+
+  container.innerHTML = html;
+}
+
+function toggleResourcePanel() {
+  const panel = document.getElementById('resourcePanel');
+  if (!panel) return;
+
+  const isOpen = panel.classList.contains('open');
+  if (isOpen) {
+    panel.classList.remove('open');
+  } else {
+    panel.classList.add('open');
+    if (!panel.dataset.rendered) {
+      renderResourcePanel();
+      panel.dataset.rendered = 'true';
+    }
+  }
+}
+
+function toggleResourceGroup(btn) {
+  const group = btn.closest('.resource-group');
+  if (!group) return;
+  group.classList.toggle('collapsed');
 }
 
 // === Canvas Generation (View Mode) ===
@@ -617,6 +1003,27 @@ function init() {
     });
   });
 
+  // AI prompt toggles and copy buttons (delegated)
+  document.addEventListener('click', (e) => {
+    const aiToggle = e.target.closest('[data-ai-toggle]');
+    if (aiToggle) {
+      toggleAiPrompt(aiToggle.dataset.aiToggle);
+      return;
+    }
+
+    const copyBtn = e.target.closest('[data-copy-prompt]');
+    if (copyBtn) {
+      copyAiPrompt(copyBtn.dataset.copyPrompt);
+      return;
+    }
+
+    const resourceGroupBtn = e.target.closest('[data-resource-group]');
+    if (resourceGroupBtn) {
+      toggleResourceGroup(resourceGroupBtn);
+      return;
+    }
+  });
+
   // Theme selector
   document.getElementById('themeSelect').addEventListener('change', (e) => {
     applyTheme(e.target.value);
@@ -643,6 +1050,10 @@ function init() {
     }
   });
   document.getElementById('btnClear').addEventListener('click', clearCanvas);
+
+  // Resource panel
+  document.getElementById('btnResources').addEventListener('click', toggleResourcePanel);
+  document.getElementById('btnCloseResources').addEventListener('click', toggleResourcePanel);
 }
 
 // Start

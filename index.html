@@ -29,6 +29,7 @@
         </select>
       </div>
       <div class="header-actions">
+        <button type="button" class="btn btn--secondary" id="btnResources" title="Tools & Resources">Resources</button>
         <button type="button" class="btn btn--secondary" id="btnExport" title="Export canvas as JSON">Export</button>
         <button type="button" class="btn btn--secondary" id="btnImport" title="Import canvas from JSON">Import</button>
         <input type="file" id="fileImport" accept=".json" hidden>
@@ -306,6 +307,15 @@
   <footer class="app-footer no-print">
     <p>Based on <a href="https://www.leanfoundry.com/articles/what-is-lean-canvas" target="_blank" rel="noopener">Lean Canvas</a> by Ash Maurya. Open source under <a href="LICENSE" target="_blank">GPL-3.0</a>, zero dependencies, works offline.</p>
   </footer>
+
+  <!-- Resource Panel (slide-out sidebar) -->
+  <aside id="resourcePanel" class="resource-panel no-print">
+    <div class="resource-panel-header">
+      <h2 class="resource-panel-title">Tools & Resources</h2>
+      <button type="button" class="btn-close-panel" id="btnCloseResources" aria-label="Close resource panel">&times;</button>
+    </div>
+    <div class="resource-panel-content" id="resourcePanelContent"></div>
+  </aside>
 
   <script src="app.js"></script>
 </body>
