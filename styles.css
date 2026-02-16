@@ -164,6 +164,94 @@
   --canvas-sub-bg: #f8f0e0;
 }
 
+/* === Neon Theme (cosmic dark with glow effects) === */
+.theme-neon {
+  --bg-primary: #1c1c1c;
+  --bg-secondary: #141422;
+  --bg-card: #262633;
+  --bg-input: #0f0f19;
+  --bg-help: #1a1a30;
+  --bg-header: #0f0f19;
+  --text-primary: rgba(255,255,255,0.85);
+  --text-secondary: rgba(255,255,255,0.60);
+  --text-muted: rgba(255,255,255,0.40);
+  --text-on-primary: #0f0f19;
+  --border-color: #393945;
+  --border-card: #393945;
+  --accent: #53FFEA;
+  --accent-hover: #7bffef;
+  --accent-light: #1a2a2e;
+  --danger: #F04B43;
+  --danger-hover: #f47069;
+  --success: #01EBCF;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 0 8px rgba(83,255,234,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5), 0 0 16px rgba(83,255,234,0.06);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.6), 0 0 24px rgba(83,255,234,0.08);
+  --step-bg: #53FFEA;
+  --step-text: #0f0f19;
+  --help-border: #2b9890;
+  --canvas-border: #53FFEA;
+  --canvas-header-bg: #141422;
+  --canvas-cell-bg: #262633;
+  --canvas-sub-bg: #1c1c1c;
+  --glow-color: rgba(83,255,234,0.15);
+  --glow-color-strong: rgba(83,255,234,0.3);
+  --glow-secondary: rgba(245,137,255,0.15);
+}
+
+/* Neon glow effects */
+.theme-neon .section-card:focus-within {
+  box-shadow: 0 0 12px var(--glow-color), 0 0 24px rgba(83,255,234,0.05);
+  border-color: var(--accent);
+}
+
+.theme-neon .btn--primary {
+  box-shadow: 0 0 12px var(--glow-color-strong), 0 0 24px var(--glow-color);
+}
+.theme-neon .btn--primary:hover {
+  box-shadow: 0 0 16px var(--glow-color-strong), 0 0 32px var(--glow-color);
+}
+
+.theme-neon .step-number {
+  box-shadow: 0 0 8px var(--glow-color);
+}
+
+.theme-neon .canvas-grid {
+  box-shadow: 0 0 20px var(--glow-color), 0 0 40px rgba(83,255,234,0.05);
+}
+
+.theme-neon .cell-title {
+  text-shadow: 0 0 8px var(--glow-color);
+}
+
+.theme-neon .btn-help:hover,
+.theme-neon .btn-help[aria-expanded="true"] {
+  box-shadow: 0 0 8px var(--glow-secondary);
+  background: #F589FF;
+  border-color: #F589FF;
+}
+
+.theme-neon .help-panel .help-links a:hover {
+  background: #F589FF;
+  border-color: #F589FF;
+  color: #0f0f19;
+}
+
+.theme-neon .canvas-title-input:focus {
+  box-shadow: 0 0 12px var(--glow-color);
+}
+
+.theme-neon .section-fields textarea:focus {
+  box-shadow: 0 0 8px var(--glow-color);
+}
+
+.theme-neon .app-title {
+  background: linear-gradient(135deg, #53FFEA, #F589FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* === Base Styles === */
 html {
   font-size: var(--font-size-base);

@@ -491,7 +491,7 @@ function backToEditor() {
 }
 
 // === Export / Import ===
-function exportJSON() {
+async function exportJSON() {
   readEditorState();
   saveToLocalStorage();
 
@@ -500,8 +500,31 @@ function exportJSON() {
     : 'untitled';
   const dateStr = new Date().toISOString().slice(0, 10);
   const filename = `lean-canvas-${slug}-${dateStr}.json`;
+  const jsonStr = JSON.stringify(canvasData, null, 2);
 
-  const blob = new Blob([JSON.stringify(canvasData, null, 2)], { type: 'application/json' });
+  // Use File System Access API if available (Chromium browsers)
+  if (window.showSaveFilePicker) {
+    try {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: filename,
+        types: [{
+          description: 'JSON Files',
+          accept: { 'application/json': ['.json'] },
+        }],
+      });
+      const writable = await handle.createWritable();
+      await writable.write(jsonStr);
+      await writable.close();
+      return;
+    } catch (err) {
+      // User cancelled the picker — do nothing
+      if (err.name === 'AbortError') return;
+      // API failed — fall through to legacy download
+    }
+  }
+
+  // Fallback: automatic download
+  const blob = new Blob([jsonStr], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
