@@ -1,5 +1,5 @@
 /* ============================================================
-   Lean Canvas Builder — Application Logic
+   CanvasLab — Application Logic
    ============================================================ */
 
 // === Help Content ===
@@ -562,8 +562,8 @@ const SECTIONS = [
 ];
 
 // === State ===
-const STORAGE_KEY = 'leancanvas_data';
-const THEME_KEY = 'leancanvas_theme';
+const STORAGE_KEY = 'canvaslab_data';
+const THEME_KEY = 'canvaslab_theme';
 
 let canvasData = createEmptyCanvas();
 let saveTimeout = null;
@@ -885,7 +885,7 @@ async function exportJSON() {
     ? canvasData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
     : 'untitled';
   const dateStr = new Date().toISOString().slice(0, 10);
-  const filename = `lean-canvas-${slug}-${dateStr}.json`;
+  const filename = `canvaslab-${slug}-${dateStr}.json`;
   const jsonStr = JSON.stringify(canvasData, null, 2);
 
   // Use File System Access API if available (Chromium browsers)

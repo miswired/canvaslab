@@ -1,14 +1,14 @@
-# Lean Canvas Builder
+# CanvasLab
 
-A guided, interactive Lean Canvas tool for entrepreneurs and startup founders. Fill out each section step-by-step, get help with built-in guides, AI prompts, and curated research tools, then generate a printable canvas.
+A guided, interactive [Lean Canvas](https://www.leanfoundry.com/articles/what-is-lean-canvas) tool for entrepreneurs and startup founders. Fill out each section step-by-step, get help with built-in guides, AI prompts, and curated research tools, then generate a printable canvas.
 
-![Lean Canvas Builder Screenshot](screenshot.png)
+![CanvasLab Screenshot](screenshot.png)
 
 ## What is Lean Canvas?
 
 [Lean Canvas](https://www.leanfoundry.com/articles/what-is-lean-canvas) is a 1-page business model framework created by Ash Maurya, adapted from Alexander Osterwalder's Business Model Canvas. It helps entrepreneurs deconstruct their idea into key assumptions that can be tested quickly.
 
-This tool walks you through the canvas in a recommended fill order, with educational content and tools for each step.
+CanvasLab walks you through the canvas in a recommended fill order, with educational content and tools for each step.
 
 ## Features
 
@@ -30,8 +30,8 @@ No installation required. Just open the HTML file in a browser.
 ### Option 1: Clone and open
 
 ```bash
-git clone https://github.com/miswired/leancanvas.git
-cd leancanvas
+git clone https://github.com/miswired/canvaslab.git
+cd canvaslab
 open index.html        # macOS
 xdg-open index.html    # Linux
 start index.html       # Windows
@@ -66,7 +66,7 @@ Then visit `http://localhost:8000`.
 ## File Structure
 
 ```
-leancanvas/
+canvaslab/
 ├── index.html          # Main HTML structure
 ├── styles.css          # All styles including 9 themes and print styles
 ├── app.js              # Application logic, help content, resource data
