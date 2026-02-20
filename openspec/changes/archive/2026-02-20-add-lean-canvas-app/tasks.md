@@ -53,8 +53,8 @@
 
 ## 7. Polish & Testing
 - [x] 7.1 Add keyboard navigation and ARIA labels for accessibility
-- [ ] 7.2 Test in Chrome, Firefox, and Safari
-- [ ] 7.3 Test print output on US Letter landscape
-- [ ] 7.4 Verify all themes render correctly in both edit and view modes
-- [ ] 7.5 Verify export/import round-trip preserves all data
-- [ ] 7.6 Final visual polish pass
+- [x] 7.2 Test in Chrome, Firefox, and Safari
+- [x] 7.3 Test print output on US Letter landscape
+- [x] 7.4 Verify all themes render correctly in both edit and view modes
+- [x] 7.5 Verify export/import round-trip preserves all data
+- [x] 7.6 Final visual polish pass
