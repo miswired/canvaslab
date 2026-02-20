@@ -161,10 +161,38 @@
           </div>
         </div>
 
-        <!-- Step 9: Channels -->
-        <div class="section-card" data-section="channels">
+        <!-- Step 9: Threats (CanvasLab Extension) -->
+        <div class="section-card section-card--extension" data-section="threats">
           <div class="section-header">
             <span class="step-number">9</span>
+            <h2 class="section-title">Threats</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Threats" data-help-toggle="threats">?</button>
+          </div>
+          <div class="help-panel" id="help-threats" hidden></div>
+          <div class="section-fields">
+            <label for="field-threats">What competitive threats could derail your startup?</label>
+            <textarea id="field-threats" data-field="threats.content" placeholder="Patent/IP exposure, incumbent litigation patterns, coercive licensing programs, regulatory capture, predatory tactics..." rows="4"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 10: Defensive Strategy (CanvasLab Extension) -->
+        <div class="section-card section-card--extension" data-section="defensiveStrategy">
+          <div class="section-header">
+            <span class="step-number">10</span>
+            <h2 class="section-title">Defensive Strategy</h2>
+            <button type="button" class="btn-help" aria-label="Toggle help for Defensive Strategy" data-help-toggle="defensiveStrategy">?</button>
+          </div>
+          <div class="help-panel" id="help-defensiveStrategy" hidden></div>
+          <div class="section-fields">
+            <label for="field-defensiveStrategy">How will you defend against these threats?</label>
+            <textarea id="field-defensiveStrategy" data-field="defensiveStrategy.content" placeholder="Design-arounds, defensive patents, IP insurance, industry alliances (LOT Network), regulatory engagement..." rows="4"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 11: Channels -->
+        <div class="section-card" data-section="channels">
+          <div class="section-header">
+            <span class="step-number">11</span>
             <h2 class="section-title">Channels</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Channels" data-help-toggle="channels">?</button>
           </div>
@@ -175,10 +203,10 @@
           </div>
         </div>
 
-        <!-- Step 10: Cost Structure -->
+        <!-- Step 12: Cost Structure -->
         <div class="section-card" data-section="costStructure">
           <div class="section-header">
-            <span class="step-number">10</span>
+            <span class="step-number">12</span>
             <h2 class="section-title">Cost Structure</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Cost Structure" data-help-toggle="costStructure">?</button>
           </div>
@@ -189,10 +217,10 @@
           </div>
         </div>
 
-        <!-- Step 11: Revenue Streams -->
+        <!-- Step 13: Revenue Streams -->
         <div class="section-card" data-section="revenueStreams">
           <div class="section-header">
-            <span class="step-number">11</span>
+            <span class="step-number">13</span>
             <h2 class="section-title">Revenue Streams</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Revenue Streams" data-help-toggle="revenueStreams">?</button>
           </div>
@@ -203,10 +231,10 @@
           </div>
         </div>
 
-        <!-- Step 12: Key Metrics -->
+        <!-- Step 14: Key Metrics -->
         <div class="section-card" data-section="keyMetrics">
           <div class="section-header">
-            <span class="step-number">12</span>
+            <span class="step-number">14</span>
             <h2 class="section-title">Key Metrics</h2>
             <button type="button" class="btn-help" aria-label="Toggle help for Key Metrics" data-help-toggle="keyMetrics">?</button>
           </div>
@@ -293,6 +321,21 @@
               <div class="cell-split-bottom">
                 <h3 class="cell-title">Revenue Streams</h3>
                 <div class="cell-content" id="view-revenueStreams"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: Threat Landscape (CanvasLab Extension) -->
+          <div class="canvas-cell cell-threat-landscape">
+            <div class="cell-extension-label">CanvasLab Extension</div>
+            <div class="cell-split">
+              <div class="cell-split-top">
+                <h3 class="cell-title">Threats</h3>
+                <div class="cell-content" id="view-threats"></div>
+              </div>
+              <div class="cell-split-bottom">
+                <h3 class="cell-title">Defensive Strategy</h3>
+                <div class="cell-content" id="view-defensiveStrategy"></div>
               </div>
             </div>
           </div>

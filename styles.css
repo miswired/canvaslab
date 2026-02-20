@@ -821,6 +821,9 @@ a:hover {
   box-shadow: var(--shadow-md);
   border-color: var(--accent);
 }
+.section-card--extension {
+  border-style: dashed;
+}
 
 .section-header {
   display: flex;
@@ -1028,7 +1031,7 @@ a:hover {
 .canvas-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1.2fr 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   border: 2px solid var(--canvas-border);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -1094,6 +1097,19 @@ a:hover {
 .cell-metrics      { grid-column: 1 / 3; grid-row: 2; }
 .cell-channels     { grid-column: 3; grid-row: 2; }
 .cell-cost-revenue { grid-column: 4 / 6; grid-row: 2; }
+
+/* Grid placement — Row 3 (CanvasLab Extension) */
+.cell-threat-landscape { grid-column: 1 / 6; grid-row: 3; }
+
+.cell-extension-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-bottom: var(--space-xs);
+}
 
 .cell-split {
   display: flex;
@@ -1462,6 +1478,15 @@ a:hover {
 
   .cell-split-bottom {
     border-top-color: #cccccc !important;
+  }
+
+  .cell-threat-landscape {
+    min-height: 70px;
+  }
+
+  .cell-extension-label {
+    color: #999999 !important;
+    font-size: 6pt !important;
   }
 
   .canvas-footer {

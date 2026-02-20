@@ -1,7 +1,7 @@
 # Project Context
 
 ## Purpose
-An interactive web-based Lean Canvas tool that helps entrepreneurs think through and structure business ideas using Ash Maurya's standard 9-box Lean Canvas framework (from "Running Lean"). The tool provides guided input, educational content, reference links, and generates a polished, printable one-page canvas.
+An interactive web-based Lean Canvas tool that helps entrepreneurs think through and structure business ideas using Ash Maurya's standard 9-box Lean Canvas framework (from "Running Lean"), plus a CanvasLab-exclusive Threat Landscape extension for competitive risk analysis. The tool provides guided input, educational content, reference links, and generates a polished, printable one-page canvas.
 
 ## Tech Stack
 - **HTML5** - Semantic markup, single-page application
@@ -49,7 +49,11 @@ The Lean Canvas is a 1-page business model template created by Ash Maurya, adapt
 8. **Key Metrics** - Key numbers that tell you how the business is doing
 9. **Unfair Advantage** - What can't be easily copied or bought
 
-The recommended fill order: Customer → Problem → UVP → Solution → Channels → Revenue → Costs → Key Metrics → Unfair Advantage
+**CanvasLab Extension** (not part of the standard Lean Canvas):
+10. **Threats** - Competitive threats: patent/IP exposure, litigation patterns, coercive licensing, regulatory capture, predatory tactics
+11. **Defensive Strategy** - How to defend: design-arounds, defensive patents, IP insurance, industry alliances, regulatory engagement
+
+The recommended fill order (14 steps): Problem → Existing Alternatives → Ideal Customer → Customer Segments → Solution → UVP → High-Level Concept → Unfair Advantage → Threats → Defensive Strategy → Channels → Cost Structure → Revenue Streams → Key Metrics
 
 ## Important Constraints
 - **Zero dependencies** - Must work by opening index.html in any modern browser

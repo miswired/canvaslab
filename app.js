@@ -298,6 +298,89 @@ What I think my advantage might be: [describe]
 My competitive landscape: [describe key competitors]`,
   },
 
+  threats: {
+    what: 'Identify competitive threats that could derail your startup before it gains traction. This goes beyond "who are the competitors" — it asks "who might actively attack you, and how?" Patent litigation, coercive licensing programs, regulatory capture, and predatory pricing are real weapons incumbents use against startups.',
+    how: `<ul>
+      <li><strong>Patent/IP exposure:</strong> Search for blocking patents in your technology area. Who holds them? How broad are the claims?</li>
+      <li><strong>Litigation patterns:</strong> Do incumbents in your space have a history of suing startups? Check PACER or court records</li>
+      <li><strong>Licensing regimes:</strong> Are there mandatory or coercive licensing programs? (e.g., Signify's EnabLED program forced 1,500+ lighting companies into licensing)</li>
+      <li><strong>Regulatory capture:</strong> Have incumbents written the rules in ways that mirror their own architecture?</li>
+      <li><strong>Predatory tactics:</strong> Could a well-funded competitor undercut your pricing, lock up distribution, or acquire and kill you?</li>
+      <li>If you find nothing — great. But look hard before assuming the coast is clear</li>
+    </ul>`,
+    example: '1. HelloFresh and Blue Apron hold patents on meal-kit logistics and recommendation algorithms — need FTO analysis before building delivery features\n2. Recipe content aggregators (Allrecipes/Meredith Corp) have sued over recipe scraping and database rights\n3. Amazon Fresh could add AI meal planning overnight and bundle it with Prime at zero margin\n4. Food safety regulations vary by state — incumbent meal-kit companies helped shape USDA guidelines that favor their shipping model over app-based alternatives',
+    references: [
+      { text: 'Freedom to Operate — IP Business Academy', url: 'https://ipbusinessacademy.org/freedom-to-operate-navigating-the-patent-landscape' },
+      { text: 'Startups and Patent Trolls — Colleen Chien (Stanford)', url: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2146251' },
+      { text: 'Regulatory Capture and Innovation — Paul Asel', url: 'https://paulasel.medium.com/regulatory-capture-navigating-the-third-rail-of-innovation-3fa97b2ad6d8' },
+    ],
+    tools: [
+      { text: 'Google Patents', url: 'https://patents.google.com/', pricing: 'free' },
+      { text: 'USPTO TESS (Trademarks)', url: 'https://tmsearch.uspto.gov/', pricing: 'free' },
+      { text: 'PACER (Court Records)', url: 'https://pacer.uscourts.gov/', pricing: 'freemium' },
+      { text: 'LOT Network', url: 'https://lotnet.com/', pricing: 'free' },
+    ],
+    aiPrompt: `I'm building a [type of product/service] in the [industry] space. Help me identify competitive threats that could derail my startup.
+
+Analyze these threat categories:
+1. **Patent/IP exposure** — Are there blocking patents? Who holds large patent portfolios in this space?
+2. **Litigation patterns** — Do incumbents have a history of suing startups or enforcing patents aggressively?
+3. **Licensing regimes** — Are there mandatory or coercive licensing programs I'd need to join?
+4. **Regulatory capture** — Have incumbents shaped regulations to favor their business model?
+5. **Predatory tactics** — Could a well-funded competitor undercut pricing, lock up distribution, or acquire-and-kill?
+
+For each threat found:
+- Rate severity (low/medium/high/critical)
+- Explain the likely impact on a startup at my stage
+- Note any known examples of this threat being executed in my industry
+
+My product: [describe your product]
+My industry: [describe the competitive landscape]
+Key incumbents: [list major players]`,
+  },
+
+  defensiveStrategy: {
+    what: 'Document your plan for defending against the threats you identified. Knowing the threats is useless without a strategy. This section turns awareness into action — design-arounds, defensive patents, insurance, industry alliances, and regulatory engagement.',
+    how: `<ul>
+      <li><strong>Design-arounds:</strong> Can you build your product to avoid infringing key patents? Document alternative approaches</li>
+      <li><strong>Defensive patents:</strong> File your own patents for leverage in cross-licensing negotiations</li>
+      <li><strong>IP insurance:</strong> Patent defense insurance can cover litigation costs ($1-3M+ per suit)</li>
+      <li><strong>Industry alliances:</strong> Join LOT Network (free for startups under $25M) or Open Invention Network for defensive patent pools</li>
+      <li><strong>Regulatory engagement:</strong> Participate in standards bodies and public comment periods early</li>
+      <li><strong>Prior art:</strong> Document your independent development and publish defensive disclosures</li>
+    </ul>`,
+    example: '1. Design-around: Build recommendation engine using collaborative filtering (non-patented approach) rather than patented content-based methods\n2. Trademark: "FreshPlate" cleared via USPTO TESS search — no conflicting marks in food/tech classes\n3. Alliance: Join LOT Network (free tier) for defensive patent coverage against trolls\n4. IP insurance: Budget $5K/year for patent defense insurance via IPISC\n5. Regulatory: Engage with local health department early on food-safety compliance for app-based meal planning (avoid being shut out by meal-kit lobby regulations)',
+    references: [
+      { text: 'LOT Network — Free Startup Patent Defense', url: 'https://lotnet.com/startup-overview/' },
+      { text: 'Open Invention Network — Linux/OSS Patent Pool', url: 'https://openinventionnetwork.com/' },
+      { text: 'Patent Defense Strategies — EFF', url: 'https://www.eff.org/issues/defend-innovation' },
+    ],
+    tools: [
+      { text: 'LOT Network', url: 'https://lotnet.com/', pricing: 'free' },
+      { text: 'Google Patents', url: 'https://patents.google.com/', pricing: 'free' },
+      { text: 'USPTO TESS (Trademarks)', url: 'https://tmsearch.uspto.gov/', pricing: 'free' },
+      { text: 'Open Invention Network', url: 'https://openinventionnetwork.com/', pricing: 'free' },
+    ],
+    aiPrompt: `Based on the competitive threats I've identified for my [type of product/service], help me create a defensive strategy.
+
+Threats I've identified:
+[paste your threats from the previous section]
+
+For each threat, suggest:
+1. **Immediate actions** (can do this week) — e.g., prior art search, trademark filing, joining LOT Network
+2. **Short-term defenses** (next 3 months) — e.g., design-arounds, defensive disclosures, IP insurance quotes
+3. **Long-term strategy** (6-12 months) — e.g., building a patent portfolio, regulatory engagement, industry alliances
+
+Also suggest:
+- Estimated cost for each defensive action
+- Priority ranking (which threats to address first)
+- Any "free" defenses I can implement immediately
+
+My product: [describe your product]
+My budget for IP defense: [describe your constraints]
+My stage: [pre-revenue / early revenue / scaling]`,
+  },
+
   channels: {
     what: 'How will you reach and acquire your customers? Think about both free and paid channels. Your initial goal is learning (getting in front of customers), not scaling.',
     how: `<ul>
@@ -545,7 +628,7 @@ const RESOURCE_PANEL_DATA = [
   },
 ];
 
-// === Section Metadata (custom fill order — 12 steps) ===
+// === Section Metadata (custom fill order — 14 steps) ===
 const SECTIONS = [
   { key: 'problem', title: 'Problem' },
   { key: 'existingAlternatives', title: 'Existing Alternatives' },
@@ -555,6 +638,8 @@ const SECTIONS = [
   { key: 'uvp', title: 'Unique Value Proposition' },
   { key: 'highLevelConcept', title: 'High-Level Concept' },
   { key: 'unfairAdvantage', title: 'Unfair Advantage' },
+  { key: 'threats', title: 'Threats' },
+  { key: 'defensiveStrategy', title: 'Defensive Strategy' },
   { key: 'channels', title: 'Channels' },
   { key: 'costStructure', title: 'Cost Structure' },
   { key: 'revenueStreams', title: 'Revenue Streams' },
@@ -585,6 +670,8 @@ function createEmptyCanvas() {
       costStructure: { content: '' },
       keyMetrics: { content: '' },
       unfairAdvantage: { content: '' },
+      threats: { content: '' },
+      defensiveStrategy: { content: '' },
     },
   };
 }
@@ -832,11 +919,13 @@ function toggleResourceGroup(btn) {
 }
 
 // === Canvas Generation (View Mode) ===
-// The generated canvas still uses the classic Lean Canvas grid layout.
-// The 12 editor sections map back into the standard grid cells:
+// The generated canvas uses the classic Lean Canvas grid layout (rows 1-2)
+// plus a CanvasLab extension row (row 3) for Threat Landscape.
+// The 14 editor sections map into the grid cells:
 //   Problem cell = problem + existingAlternatives
 //   Customer cell = customerSegments + earlyAdopters
 //   UVP cell = uvp + highLevelConcept
+//   Threat Landscape cell = threats + defensiveStrategy
 function generateCanvas() {
   readEditorState();
 
@@ -860,6 +949,8 @@ function generateCanvas() {
     'view-channels': canvasData.sections.channels.content,
     'view-costStructure': canvasData.sections.costStructure.content,
     'view-revenueStreams': canvasData.sections.revenueStreams.content,
+    'view-threats': canvasData.sections.threats.content,
+    'view-defensiveStrategy': canvasData.sections.defensiveStrategy.content,
   };
 
   for (const [id, text] of Object.entries(viewMap)) {

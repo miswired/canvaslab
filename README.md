@@ -6,20 +6,21 @@ A guided, interactive [Lean Canvas](https://www.leanfoundry.com/articles/what-is
 
 ## What is Lean Canvas?
 
-[Lean Canvas](https://www.leanfoundry.com/articles/what-is-lean-canvas) is a 1-page business model framework created by Ash Maurya, adapted from Alexander Osterwalder's Business Model Canvas. It helps entrepreneurs deconstruct their idea into key assumptions that can be tested quickly.
+[Lean Canvas](https://www.leanfoundry.com/articles/what-is-lean-canvas) is a 1-page business model framework created by Ash Maurya, adapted from Alexander Osterwalder's Business Model Canvas. It has 9 standard boxes (Problem, Customer Segments, UVP, Solution, Channels, Revenue Streams, Cost Structure, Key Metrics, Unfair Advantage) that help entrepreneurs deconstruct their idea into key assumptions that can be tested quickly.
 
-CanvasLab walks you through the canvas in a recommended fill order, with educational content and tools for each step.
+CanvasLab implements the full standard Lean Canvas, then extends it with a **Threat Landscape** section (Threats + Defensive Strategy) that is **not part of Maurya's original framework**. This extension helps founders assess competitive legal and market risks — patent exposure, aggressive licensing, regulatory capture — that the standard canvas does not address. The extension is clearly labeled in both the editor and the printed output.
 
 ## Features
 
-- **Guided 12-step fill order** — Sections are ordered for optimal flow, starting with Problem and ending with Key Metrics
+- **Guided 14-step fill order** — Sections are ordered for optimal flow, starting with Problem and ending with Key Metrics
+- **Threat Landscape (CanvasLab Extension)** — Two bonus sections not found in the standard Lean Canvas: Threats and Defensive Strategy, placed after Unfair Advantage. Helps founders identify patent/IP exposure, litigation risk, coercive licensing, regulatory capture, and predatory tactics — then plan defenses
 - **Built-in help system** — Each section includes "What is this?", "How to fill it out", a worked example (FreshPlate meal planning startup), reference articles, and curated research tools
 - **AI prompts** — Every section has a ready-to-copy prompt you can paste into ChatGPT, Claude, or any AI assistant to get help filling it out
 - **Resource panel** — Slide-out sidebar with 39 tools across 8 categories (Problem Discovery, Competitive Research, Audience Research, Prototyping, Copywriting, Marketing, Financial Planning, Analytics), each tagged as free, freemium, or paid
 - **9 themes** — Dark, Neon, Cyberpunk, Synthwave, Matrix, Aurora, Light, Blueprint, Warm — including glow effects on the neon/dark themes
 - **Auto-save** — All input is saved to localStorage automatically with a 300ms debounce
 - **JSON export/import** — Export your canvas as a JSON file (with file picker on supported browsers) and import it later or on another device
-- **Printable canvas** — Generate a classic Lean Canvas grid layout optimized for US Letter landscape printing
+- **Printable canvas** — Generate a Lean Canvas grid layout (classic 9-box + Threat Landscape extension row) optimized for US Letter landscape printing
 - **Zero dependencies** — Pure HTML, CSS, and JavaScript. No build step, no frameworks, no external requests
 - **Works offline** — Open the file in any browser and start working
 
@@ -57,7 +58,7 @@ Then visit `http://localhost:8000`.
 
 ## Usage
 
-1. **Fill out each section** — Work through the 12 steps in order. Click the **?** button on any section to see help, examples, references, tools, and an AI prompt.
+1. **Fill out each section** — Work through the 14 steps in order. Click the **?** button on any section to see help, examples, references, tools, and an AI prompt.
 2. **Use the Resource panel** — Click **Resources** in the header to browse all available tools grouped by category.
 3. **Generate your canvas** — Click **Generate Canvas** to see the classic Lean Canvas grid layout.
 4. **Print or export** — Use the **Print** button for a paper copy (US Letter landscape), or **Export** to save as JSON.
@@ -81,12 +82,8 @@ canvaslab/
 └── openspec/           # OpenSpec project documentation
     ├── project.md
     ├── AGENTS.md
-    └── changes/
-        └── add-lean-canvas-app/
-            ├── proposal.md
-            ├── design.md
-            ├── tasks.md
-            └── specs/      # Capability specifications
+    ├── specs/          # Current capability specifications
+    └── changes/        # Active and archived change proposals
 ```
 
 ## Themes
@@ -129,5 +126,6 @@ Contributions are welcome! This project uses [OpenSpec](https://github.com/opens
 
 ## Credits
 
-- Based on [Lean Canvas](https://www.leanfoundry.com/articles/what-is-lean-canvas) by Ash Maurya
+- The 9-box Lean Canvas framework is the work of [Ash Maurya](https://www.leanfoundry.com/articles/what-is-lean-canvas), adapted from Alexander Osterwalder's Business Model Canvas. CanvasLab is not affiliated with or endorsed by Ash Maurya.
+- The Threat Landscape section (Threats + Defensive Strategy) is a CanvasLab addition, not part of the original Lean Canvas.
 - Built with Claude Code
